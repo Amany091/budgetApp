@@ -1,0 +1,7 @@
+.mainHeader{
+    background-image: url('../../assets/images/headerBG.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgba(255,255,255,.1);
+    background-position: center;
+}

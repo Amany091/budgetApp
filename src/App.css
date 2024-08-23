@@ -1,0 +1,10 @@
+#modal:is(:empty){
+    display: none;
+}
+
+#modal > div {
+    background-color: rgb(41 40 39);
+    padding: 20px;
+    border-radius: 10px;
+    width: 70%;
+}
