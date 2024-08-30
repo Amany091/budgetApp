@@ -1,13 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
-import budgetReducer from "./features/AddBudgetSlice";
-import deleteReducer from "./features/deleteBudgetSlice";
-import editReducer from "./features/EditBudgetSlice";
+
+import transactionsApiReducer from "./features/transactionsApiSlice";
+import portalReducer from "./features/portalSlice";
 
 const store = configureStore({
-    reducer: {
-        budget: budgetReducer,
-        deleteBudget: deleteReducer,
-        editBudget: editReducer
+  reducer: {
+    transactions: transactionsApiReducer,
+    portal: portalReducer,
   },
 });
 

@@ -1,38 +1,6 @@
 {
   "transactions": [
     {
-      "title": "test 2",
-      "amount": "40000",
-      "type": "income",
-      "category": "5",
-      "date": "2022-10-18",
-      "id": "7"
-    },
-    {
-      "title": "dddddd",
-      "amount": "3333",
-      "type": "income",
-      "category": "2",
-      "date": "2022-10-21",
-      "id": "8"
-    },
-    {
-      "title": "monthly save",
-      "amount": "1111",
-      "type": "expanse",
-      "category": "6",
-      "date": "2022-10-13",
-      "id": "9"
-    },
-    {
-      "title": "Telegram stoks",
-      "amount": "30000",
-      "type": "expanse",
-      "category": "3",
-      "date": "2022-07-13",
-      "id": "10"
-    },
-    {
       "title": "test",
       "amount": "500",
       "type": "income",
@@ -41,12 +9,60 @@
       "id": "11"
     },
     {
-      "title": "ssss",
+      "title": "sort",
       "amount": "1220",
       "type": "income",
       "category": "1",
       "date": "2024-08-06",
       "id": "12"
+    },
+    {
+      "id": "30",
+      "title": "Telegram",
+      "amount": "30000",
+      "type": "income",
+      "category": "4",
+      "date": "2022-04-13"
+    },
+    {
+      "id": "596",
+      "title": "business",
+      "amount": "3434",
+      "type": "income",
+      "category": "3",
+      "date": "2024-08-30"
+    },
+    {
+      "id": "417",
+      "title": "freelance",
+      "amount": "1230",
+      "type": "income",
+      "category": "4",
+      "date": "2024-09-07"
+    },
+    {
+      "id": "5",
+      "title": "addwork",
+      "amount": "8760",
+      "type": "income",
+      "category": "6",
+      "date": "2024-08-28"
+    },
+    {
+      "id": "247",
+      "title": "travel",
+      "amount": "8878",
+      "type": "expanse",
+      "category": "5",
+      "date": "2024-09-05"
+    },
+    {
+      "title": "forking",
+      "amount": "9983",
+      "type": "expanse",
+      "category": "7",
+      "date": "2024-08-25",
+      "id": "314"
     }
   ],
   "categories": [
