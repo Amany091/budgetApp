@@ -1,18 +1,17 @@
 import HomePage from './pages/HomePage'
 import './App.css'
 import MainHeader from './components/MainHeader/MainHeader'
-import store from './redux/reduxStore'
-import { Provider } from 'react-redux'
-function App() {
+import { BudgetProvider } from './budgetContext'
 
+function App() {
   return (
     <div className="App">
-      <Provider store={store}>
+      <BudgetProvider>
         <MainHeader />
         <main>
           <HomePage />
         </main>
-      </Provider>
+      </BudgetProvider>
     </div>
   )
 }
