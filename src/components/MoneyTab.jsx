@@ -1,36 +1,39 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { useBudget } from '../budgetContext'
 
-const MoneyTab = ({activeTab, setActiveTab}) => {
+const MoneyTab = () => {
+    const [activeTab, setActiveTab] = useState("")
+    const {getBudgets} = useBudget()
+
+    useEffect(()=>{
+      let filter = activeTab === "money" ? {} : {type: activeTab}
+      getBudgets(filter)
+    },[activeTab])
+
   return (
     <div className='flex gap-1 my-3' >
-          <div className={`
-          bg-slate-900 text-center cursor-pointer p-3 flex-1
-                ${activeTab === "money" ? "scale-105 transition-all shadow-xl shadow-black/50":"shadow-sm opacity-70"}
-            `}
+          <div className={`bg-slate-900 text-center cursor-pointer p-3 flex-1 ${activeTab === "money" ? "transition-all shadow-black/50":" opacity-70"} `}
               onClick={()=> setActiveTab("money")}
           >
-              {""}
-              data{""}
+              data
           </div>
           <div
               className={`
               bg-slate-900 text-center cursor-pointer p-3 flex-1
-                ${activeTab === "income" ? "scale-105 transition-all shadow-xl shadow-black/50":"shadow-sm opacity-70"}
+                ${activeTab === "income" ? "transition-all shadow-black/50":"opacity-70"}
                 `}
               onClick={()=> setActiveTab("income")}
           >
-              {""}
-              income{""}
+              income
           </div>
           <div
               className={`
               bg-slate-900 text-center cursor-pointer p-3 flex-1
-                ${activeTab === "expanse" ? "scale-105 transition-all shadow-xl shadow-black/50":"shadow-sm opacity-70"}
+                ${activeTab === "expense" ? "transition-all shadow-black/50":"opacity-70"}
                 `}
-              onClick={()=> setActiveTab("expanse")}
+              onClick={()=> setActiveTab("expense")}
           >
-              {""}
-              expanse{""}
+              expense
           </div>
     </div>
   )
