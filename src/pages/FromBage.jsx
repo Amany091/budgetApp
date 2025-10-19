@@ -7,8 +7,8 @@ const FromBage = ({setShow, show, status, transaction}) => {
     const [data, setData] = useState({ title: "", amount: "", type: "", category: "", date: "" });
     const {addBudget, updateBudget} = useBudget()
     const formRef = useRef()
-    const transactionDate = transaction?.date ? new Date(transaction.date) : null;
-    const formatedDate = transactionDate?.toLocaleDateString("en-GB");
+    const transactionDate = transaction?.date ? new Date(transaction?.date) : null;
+    const formatedDate = transactionDate?.toISOString().split('T')[0] || '';
 
     const handleSubmit = (e) => {
         e.preventDefault()

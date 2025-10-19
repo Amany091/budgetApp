@@ -16,7 +16,11 @@ export const BudgetProvider = ({ children }) => {
       setLoading(true);
       const res = await get(`${import.meta.env.VITE_HOST_URL}/api/v1/budget/budget`, {params});
       setBudgets(res.data?.data);
-      setCount({ total: res?.data?.total, income: res?.data?.income, expense: res?.data?.expense });
+      setCount((prev) => ({
+        total: res.data.total,
+        income: res.data.income,
+        expense: res.data.expense,
+      }));
     } catch (err) {
       setError(err.message);
     } finally {
@@ -30,6 +34,11 @@ export const BudgetProvider = ({ children }) => {
       const res = await post(`${import.meta.env.VITE_HOST_URL}/api/v1/budget/add`, {body});
       toast.success("Budget added successfully");
       setBudgets((prev) => [...prev, res.data.data]);
+      setCount(() => ({
+        total: res.data.total,
+        income: res.data.income,
+        expense: res.data.expense,
+      }));
     } catch (err) {
       setError(err.message);
     }
@@ -42,6 +51,11 @@ export const BudgetProvider = ({ children }) => {
       setBudgets((prev) =>
         prev.map((item) => (item._id === id ? res.data.data : item))
       );
+      setCount(() => ({
+        total: res.data.total,
+        income: res.data.income,
+        expense: res.data.expense,
+      }));
       toast.success("Budget updated successfully");
     } catch (err) {
       setError(err.message);
@@ -51,9 +65,14 @@ export const BudgetProvider = ({ children }) => {
   // ✅ DELETE a budget
   const deleteBudget = async (id) => {
     try {
-      await del(`${import.meta.env.VITE_HOST_URL}/api/v1/budget/delete/${id}`);
+      const res = await del(`${import.meta.env.VITE_HOST_URL}/api/v1/budget/delete/${id}`);
       toast.success("Budget deleted successfully");
       setBudgets((prev) => prev?.filter((item) => item._id !== id));
+      setCount((prev) => ({
+        total: res.data.total,
+        income: res.data.income,
+        expense: res.data.expense,
+      }));
     } catch (err) {
       setError(err.message);
     }
